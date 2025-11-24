@@ -1,0 +1,324 @@
+%% -*- coding: utf-8 -*-
+%% Time-stamp: <Chen Wang: 2025-11-24 16:08:00>
+
+\documentclass[zihao=-4,AutoFakeBold=true]{ctexbook}
+
+\ctexset {
+  part = {
+    numbering = false
+  },
+  chapter = {
+    numbering = false
+  },
+  section = {
+    %% numbering = false
+  },
+  subsection = {
+    numbering = false,
+    % format = \centering\bfseries,
+    format = \bfseries,
+  },
+  subsubsection = {
+    numbering = false,
+    format = \small\qquad\bfseries
+  }
+}
+
+%% \usepackage[margin=0.5cm]{geometry}
+%% For Meizu Hornor V10
+\usepackage[
+% showframe,
+% includefoot,
+paperwidth=2.68in, % 2.68in,
+paperheight=5.36in,
+% paperwidth=3.6in,
+% paperheight=7.2in,
+left=0.1in,
+right=0.1in,
+top=0.1in,
+bottom=0.20in,
+footskip=10pt
+]
+{geometry}
+
+% For Kindle 6'
+%% \usepackage[
+%% % showframe,
+%% paperwidth=3.6in,
+%% paperheight=4.8in,
+%% left=0.15in,
+%% right=0.15in,
+%% top=0.18in,
+%% bottom=0.18in,
+%% % footskip=10pt
+%% ]
+% {geometry}
+
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+  \put(0,0){%
+    \parbox[b][\paperheight]{\paperwidth}{%
+      \vfill
+      \centering
+      \includegraphics[width=\paperwidth,height=\paperheight,%
+      keepaspectratio]{../bg.jpg}%
+      \vfill
+    }}}
+
+\usepackage{xcolor}
+\definecolor{BlueGrey}{HTML}{DBE1F1}
+\definecolor{GreenRead}{HTML}{A8F29A}
+\definecolor{GreyRead}{HTML}{D8D3D6}
+\definecolor{YellowRead}{HTML}{F8FD89}
+\definecolor{BlueRead}{HTML}{96ADFC}
+\definecolor{Turquoise}{HTML}{A5F7E1}
+
+\usepackage{xeCJKfntef}
+\usepackage{xeCJK}
+\xeCJKsetup{
+  AutoFallBack = true,
+  AutoFakeBold = true,
+  PunctStyle = kaiming,
+  CheckFullRight = true,
+  CheckSingle = false,
+  AllowBreakBetweenPuncts = true,
+  CJKmath = true,
+}
+
+\xeCJKDeclareSubCJKBlock{Ext-A}{ "3400 -> "4DB5 }
+\xeCJKDeclareSubCJKBlock{Ext-B}{ "20000 -> "2A6DF }
+
+\setCJKmainfont[                %
+BoldFont={FZYouHei_GBK 513B},   %
+% Ext-A={仓耳今楷05-W04},
+Ext-B={SimSun-ExtB},
+FallBack={仓耳今楷05-W04}]
+% FallBack={FZLanTingKanSongK}]     %
+% {FZShengShiKaiShuS-M-GB}
+{仓耳今楷05-W04}
+
+% \setCJKmainfont[                %
+% BoldFont={FZYouHei_GBK 513B},   %
+% FallBack={FZLanTingKanSongK}]     %
+% {FZShengShiKaiShuS-M-GB}
+
+% \setCJKfallbackfamilyfont{\CJKrmdefault}{HanaMinB}
+% \setCJKfallbackfamilyfont{\CJKrmdefault}[AutoFakeBold,Scale=.97]{MingLiU-ExtB}
+
+\newCJKfontfamily[fzltks]\fzltks{FZLanTingKanSongK}
+\newCJKfontfamily[HanaMinB]\HanaMinB{HanaMinB}
+\newCJKfontfamily[HanaMinA]\HanaMinA{HanaMinA}
+\newCJKfontfamily[Unifont]\Unifont{Unifont}
+\newCJKfontfamily[KaiTi]\KaiTi{KaiTi}
+\newCJKfontfamily[xiaoli]\xiaoli{Chong Xi Small Seal}
+\newCJKfontfamily[cangkai]\cangkai{TsangerJinKai05}
+
+% \setCJKmainfont[BoldFont={FZYouHei_GBK 513B},FallBack={BabelStone Han}]{FZYaSong-R-GBK}
+% \setCJKmainfont[BoldFont={FZYouHei_GBK 513B},FallBack={FZKaiS-Extended}]{FZNewKai-Z03}
+% \setCJKmathfont{FZSongKeBenXiuKai-R-GBK}
+% \setCJKmainfont[BoldFont={FZYouHei_GBK}]{FZYaSong-R-GBK}
+% \setCJKsansfont{Microsoft YaHei}
+% \usepackage{CJKnumb}
+\usepackage{zhnumber}
+% 中文字体命令
+% \newCJKfontfamily[kai]\KaiTi{KaiTi}
+\newCJKfontfamily[song]\fzbys{FZYaSong-R-GBK}
+\newCJKfontfamily[song]\simsunb{SimSun-ExtB}
+\newCJKfontfamily[kai]\fzkaib{FZKaiS-Extended(SIP)}
+\newCJKfontfamily[song]\hanaminb{HanaMinB}
+\newCJKfontfamily[kai]\fzxk{FZNewKai-Z03}
+
+\newfontfamily{\ion}{IosevkaTerm NFM}[Scale=1.2]
+
+\newcommand{\iching}[1]{{\dejavusanszh\char\numexpr"4DC0+#1}}
+\newcommand{\trigram}[1]{{\dejavusans\char\numexpr"2630+#1}}
+
+% 设置段落不缩进
+% \setlength{\parindent}{0pt}
+
+% \let\oldsection\section
+% \renewcommand\section{\clearpage\oldsection}
+
+% \usepackage{titlesec}
+% \newcommand\sectionbreak{\ifnum\value{section}>1\clearpage\fi}
+% \newcommand\subsectionbreak{\ifnum\value{subsection}>1\clearpage\fi}
+% \newcommand\subsubsectionbreak{\ifnum\value{subsubsection}>1\clearpage\fi}
+
+\AddToHook{cmd/section/before}{\clearpage}
+\AddToHook{cmd/subsection/before}{\clearpage}
+
+\makeatletter
+\newif\if@subsubsectionused \@subsubsectionusedfalse
+\let\oldsection\section
+\let\oldsubsection\subsection
+\let\oldsubsubsection\subsubsection
+\renewcommand{\section}{\if@subsubsectionused\clearpage\@subsubsectionusedfalse\fi\oldsection}
+\renewcommand{\subsection}{\if@subsubsectionused\clearpage\@subsubsectionusedfalse\fi\oldsubsection}
+\renewcommand{\subsubsection}{\if@subsubsectionused\clearpage\fi\@subsubsectionusedtrue\oldsubsubsection}
+\makeatother
+
+\usepackage{setspace}
+\setstretch{1.3}
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\fancyhead{}
+\pagestyle{fancy}
+\fancyfoot[C]{\scriptsize 第 \thepage\ 页（共 \pageref{LastPage} 页）}
+\renewcommand{\footrulewidth}{-10pt}
+% \fancyhf{} % clear all header and footers
+% \renewcommand{\headrulewidth}{0pt} % remove the header rule
+% \rfoot{\thepage}
+\fancypagestyle{plain}{%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhf{}%
+}
+
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+
+\usepackage{framed}
+\newenvironment{poem}[1][\hsize]{%
+  \def\FrameCommand{{\color{red}\vrule width 0pt}\hspace{0pt}\fboxsep=\FrameSep}%
+  \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}}
+{\endMakeFramed}
+
+\usepackage{changepage}
+
+% \usepackage{amssymb}
+% \usepackage{mathabx}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{txfonts}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+
+\usepackage{emptypage}
+
+%% Need to fix, bookmarksdepth=4 not work
+\usepackage[hidelinks,pdfpagelayout=SinglePage]{hyperref}
+% \usepackage[hidelinks,bookmarksdepth=4]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+}
+
+%% 使每页的脚注的数字为黑色圆圈数字
+\usepackage{pifont}
+\makeatletter
+\newcommand*{\bcircnum}[1]{%
+  \expandafter\@bcircnum\csname c@#1\endcsname
+}
+
+\newcommand*{\@bcircnum}[1]{%
+  \ifnum#1<1 %
+  \@ctrerr
+  \else
+  \ifnum#1>30 %
+  \@ctrerr
+  \else
+  \ding{\the\numexpr 181+(#1)\relax}%
+  \fi
+  \fi
+}
+
+\let\origps@plain\ps@plain
+\newcommand\MakePlainPagestyleEmpty{\let\ps@plain\ps@empty}
+\newcommand\MakePlainPagestylePlain{\let\ps@plain\origps@plain}
+
+\makeatother
+
+\renewcommand*{\thefootnote}{\bcircnum{footnote}}
+
+% \usepackage{booktabs}
+
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+% \setmainfont{FZYaSongS-R-GB}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt minus .1pt
+
+% \newfontfamily\fzkeb[Path=./fonts/]{FZKaiSExtB.TTF}
+% \newCJKfontfamily[kai]\fzkeb[Path=../../fonts/]{FZKaiSExtB.TTF}
+% \newCJKfontfamily[kai]\hanaeb[Path=../../fonts/]{HanaMinB.ttf}
+
+%% Has problems when use \input or \include
+% \usepackage{underscore}
+
+\usepackage{xpinyin}
+\xpinyinsetup{
+  multiple={\color{red}}
+  % hsep={.1em plus .1em},
+  % font={\Large \bfseries}
+}
+
+\usepackage[hang,flushmargin,perpage,stable]{footmisc}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@footnotetext}{\footnotesize}{\footnotesize\KaiTi}{}{}
+% \def\@makefnmark{\tiny\@thefnmark}
+% \renewcommand{\@makefnmark}{
+%   \hbox{\@textsuperscript{
+%       \fontsize{8}{10}\selectfont\hspace{-0.5em}\@thefnmark\hspace{-1em}}
+%   }
+% }
+\makeatother
+
+\renewcommand{\footnotesize}{\fontsize{8pt}{10pt}\selectfont}
+
+
+\usepackage{makeidx}
+\makeindex
+% \DeclareRobustCommand{\myidx}[1]{{\Unifont #1}\index{#1}}
+\DeclareRobustCommand{\myidx}[1]{{\fzzcys #1}\index{#1}}
+% \DeclareRobustCommand{\myidxp}[1]{{\fzzcys \CJKunderline-{#1}}\index{#1}}
+% \DeclareRobustCommand{\myidxb}[1]{{\fzzcys \CJKunderwave-{#1}}\index{#1}}
+
+\usepackage{xparse}
+\NewDocumentCommand{\myidxp}{mO{#1}}{{\fzzcys \CJKunderline-{#1}}\index{#2}}
+\NewDocumentCommand{\myidxb}{mO{#1}}{{\fzzcys \CJKunderwave-{#1}}\index{#2}}
+
+\usepackage[totoc,font=small,rule=0.2pt]{idxlayout}
+
+\setcounter{tocdepth}{3}
+
+\makeatletter
+% \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3.0em}}
+\renewcommand*\l@subsection{\@dottedtocline{1}{2.5em}{3.0em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{1}{3.5em}{3.0em}}
+\makeatother
+
+%% title & author
+\title{\bfseries 世　说　新　语}
+\date{}
+
+\begin{document}
+
+%% Looks has problems when use \input or \include.
+% \AddToShipoutPicture*{\BackgroundPic}
+
+\clearpage\maketitle
+\clearpage\tableofcontents\thispagestyle{empty}
+% \newpage
+
+\pagenumbering{arabic}
+% \pagecolor{BlueGrey}
+\zihao{4}
+
+%% 正文
+\input{000_QianYan}
+
+%% 索隐
+% \printindex
+% \addcontentsline{toc}{part}{索引}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% TeX-master: t
+%%% End:
