@@ -17,3 +17,5 @@ temp*
 *.xdv
 *.fuse*
 */temp*
+raw/
+*region*

@@ -1,5 +1,5 @@
 %% -*- coding: utf-8 -*-
-%% Time-stamp: <Chen Wang: 2025-11-24 16:41:46>
+%% Time-stamp: <Chen Wang: 2025-11-24 21:32:25>
 
 \documentclass[zihao=-4,AutoFakeBold=true]{ctexbook}
 
@@ -160,7 +160,7 @@ FallBack={仓耳今楷05-W04}]
 \makeatother
 
 \usepackage{setspace}
-\setstretch{1.3}
+\setstretch{1.2}
 
 \usepackage{lastpage}
 \usepackage{fancyhdr}
@@ -194,6 +194,8 @@ FallBack={仓耳今楷05-W04}]
 \usepackage{txfonts}
 \usepackage{amsfonts}
 \usepackage{enumitem}
+\usepackage[lines=1,loversize=-0.3]{lettrine}
+\renewcommand{\LettrineFontHook}{\fontseries{bx}}
 
 \usepackage{emptypage}
 
@@ -275,9 +277,13 @@ FallBack={仓耳今楷05-W04}]
 \usepackage{makeidx}
 \makeindex
 % \DeclareRobustCommand{\myidx}[1]{{\Unifont #1}\index{#1}}
-\DeclareRobustCommand{\myidx}[1]{{\fzzcys #1}\index{#1}}
+\DeclareRobustCommand{\myidx}[1]{{\zihao{6}\fzxk\textcolor{violet}{#1}}\index{#1}}
 % \DeclareRobustCommand{\myidxp}[1]{{\fzzcys \CJKunderline-{#1}}\index{#1}}
 % \DeclareRobustCommand{\myidxb}[1]{{\fzzcys \CJKunderwave-{#1}}\index{#1}}
+\patchcmd{\theindex}
+{\twocolumn}
+{\twocolumn\zihao{6}}
+{}{}
 
 \usepackage{xparse}
 \NewDocumentCommand{\myidxp}{mO{#1}}{{\fzzcys \CJKunderline-{#1}}\index{#2}}
@@ -315,8 +321,8 @@ FallBack={仓耳今楷05-W04}]
 \input{001_DeXing}
 
 %% 索隐
-% \printindex
-% \addcontentsline{toc}{part}{索引}
+\printindex
+\addcontentsline{toc}{part}{索引}
 
 \end{document}
 
