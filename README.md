@@ -2,16 +2,18 @@
 
 ## How to build 
 
-    ```bash
-    xelatex Main
-    makeindex Main
-    zhmakeindex Main
-    xelatex Main
-    xelatex Main
-    ```
+TeX 文件编译顺序:
+```bash
+xelatex main
+bibtex main
+makeindex main
+zhmakeindex main
+xelatex main
+xelatex main
+```
 
-    如果遇到“? ! LaTeX Error: Counter too large.”的error，只需要ignore即可。
+如果遇到“? ! LaTeX Error: Counter too large.”的error，只需要ignore即可。
     
-    需要使用到 [zhmakeindex](https://github.com/leo-liu/zhmakeindex).
+需要使用到 [zhmakeindex](https://github.com/leo-liu/zhmakeindex).
     
-    欢迎提出意见或建议。
+欢迎提出意见或建议。
