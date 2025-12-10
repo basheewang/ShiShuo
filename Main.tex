@@ -1,5 +1,5 @@
 %% -*- coding: utf-8 -*-
-%% Time-stamp: <Chen Wang: 2025-12-10 20:20:06>
+%% Time-stamp: <Chen Wang: 2025-12-10 21:12:07>
 
 \documentclass[zihao=-4,AutoFakeBold=true]{ctexbook}
 
@@ -274,6 +274,7 @@ FallBack={仓耳今楷05-W04}]
 \renewcommand{\footnotesize}{\fontsize{8pt}{10pt}\selectfont}
 
 \usepackage{makeidx}
+% \indexsetup{toclevel=part}
 \makeindex
 % \DeclareRobustCommand{\myidx}[1]{{\Unifont #1}\index{#1}}
 \DeclareRobustCommand{\myidx}[1]{{\zihao{6}\fzxk\textcolor{violet}{#1}}\index{#1}}
@@ -288,7 +289,7 @@ FallBack={仓耳今楷05-W04}]
 \NewDocumentCommand{\myidxp}{mO{#1}}{{\fzzcys \CJKunderline-{#1}}\index{#2}}
 \NewDocumentCommand{\myidxb}{mO{#1}}{{\fzzcys \CJKunderwave-{#1}}\index{#2}}
 
-\usepackage[totoc,font=small,rule=0.2pt]{idxlayout}
+\usepackage[totoc=false,font=small,rule=0.2pt]{idxlayout}
 
 \setcounter{tocdepth}{3}
 
@@ -316,7 +317,7 @@ FallBack={仓耳今楷05-W04}]
 \zihao{4}
 
 %% 正文
-% \input{contents/000_QianYan}
+\input{contents/000_QianYan}
 % \input{contents/001_DeXing}
 % \input{contents/002_YanYu}
 % \input{contents/003_ZhengShi}
@@ -330,7 +331,7 @@ FallBack={仓耳今楷05-W04}]
 % \input{contents/011_JieWu}
 % \input{contents/012_SuHui}
 % \input{contents/013_HaoShuang}
-% \input{contents/014_RongZhi}
+\input{contents/014_RongZhi}
 % \input{contents/015_ZiXin}
 % \input{contents/016_QiXian}
 % \input{contents/017_ShangShi}
@@ -357,6 +358,7 @@ FallBack={仓耳今楷05-W04}]
 
 %% 索隐
 \printindex
+
 \addcontentsline{toc}{part}{索引}
 
 \end{document}
